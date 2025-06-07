@@ -1,0 +1,1185 @@
+@media screen and (max-width: 768px) {
+    body {
+        font-size: 100%;
+    }
+    h1 {
+        font-size: 200%;
+    }
+    h2 {
+        font-size: 150%;
+    }
+    p {
+        font-size: 120%;
+    }
+    nav a {
+        font-size: 100%;
+    }
+ 
+    /* Ocultar la navegación en pantallas pequeñas si no se usa un menú hamburguesa */
+    nav {
+        display: none;
+    }
+}
+ 
+/* Definición de la nueva paleta de colores con variables CSS */
+:root {
+    --color-deep-blue: #1A202C; /* Azul muy oscuro, para texto principal y fondos */
+    --color-dark-gray: #4A5568; /* Gris oscuro, para texto secundario */
+    --color-light-gray: #F7FAFC; /* Gris muy claro, casi blanco, para fondos principales */
+    --color-soft-gray: #EDF2F7; /* Gris claro intermedio, para secciones de fondo */
+    --color-teal-green: #38A169; /* Verde azulado/esmeralda, acento */
+    --color-teal-green-hover: #2F855A; /* Verde azulado/esmeralda más oscuro para hover */
+    --color-original-header-line: #8c4416; /* Color de la línea del header (marrón original) */
+    --color-white: #ffffff; /* Blanco puro */
+    --color-black: #000000; /* Negro puro (para sombras y overlays) */
+}
+ 
+ 
+/* Base Styles */
+body {
+    font-size: 16px;
+    font-family: 'Inter', sans-serif; /* Nueva fuente para el cuerpo del texto */
+    letter-spacing: 0.03em;
+    background-color: var(--color-light-gray); /* Fondo principal claro */
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    color: var(--color-dark-gray); /* Color de texto neutral (más oscuro) */
+}
+ 
+h1 {
+    font-size: 3.8em;
+    text-align: center;
+    width: 90%;
+    margin: 0 auto 25px;
+    font-family: 'Poppins', sans-serif; /* Nueva fuente para títulos */
+    color: var(--color-deep-blue); /* Color de título principal (más oscuro) */
+    line-height: 1.1;
+    font-weight: 700; /* Peso por defecto para Poppins */
+}
+ 
+h2 {
+    font-size: 2.5em;
+    text-align: center;
+    width: 85%;
+    margin: 30px auto 25px;
+    color: var(--color-deep-blue); /* Color de subtítulos (más oscuro) */
+    font-family: 'Poppins', sans-serif; /* Nueva fuente para subtítulos */
+    letter-spacing: 0.02em;
+    font-weight: 700; /* Peso por defecto para Poppins */
+}
+ 
+p {
+    font-size: 1.05em;
+    text-align: center;
+    width: 75%;
+    margin: 20px auto;
+    color: var(--color-dark-gray); /* Color de párrafo (más oscuro) */
+    line-height: 1.7;
+    font-weight: 400; /* Peso por defecto para Inter */
+}
+ 
+a {
+    text-decoration: none;
+    color: var(--color-teal-green); /* Color de enlaces (acento) */
+    transition: color 0.3s ease, transform 0.2s ease;
+}
+ 
+a:hover {
+    color: var(--color-teal-green-hover); /* Tono más oscuro de acento al pasar el ratón */
+    transform: translateY(-2px);
+}
+ 
+/* Header Styles - RESTAURADO EXACTAMENTE A LA VERSIÓN ORIGINAL SOLICITADA */
+header {
+    background-color: #ffffff; /* Blanco puro para el header */
+    height: 70px;
+    padding: 0 30px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+ 
+header nav {
+    display: flex;
+    gap: 20px;
+    margin-right: auto; /* Empuja la nav a la izquierda */
+    border-bottom: 2px solid var(--color-original-header-line); /* Línea de navegación original */
+    padding-bottom: 5px; /* Espacio entre el texto y la línea */
+}
+ 
+header nav a {
+    font-size: 1.1em;
+    font-weight: bold;
+    padding: 5px 10px; /* Padding para que la línea se vea mejor debajo del texto */
+    border-radius: 0; /* Sin bordes redondeados en los enlaces */
+    color: #333; /* Color de los enlaces de nav original */
+    transition: color 0.3s ease;
+}
+ 
+header nav a:hover {
+    color: var(--color-original-header-line); /* Color de la línea de nav en hover (original) */
+    background-color: transparent;
+    transform: none;
+}
+ 
+#central-icon {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    height: 75px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    top: -5px;
+}
+ 
+#central-icon img {
+    height: 100%;
+    width: auto;
+    border-radius: 50%;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+ 
+#central-icon img:hover {
+    transform: scale(1.1);
+}
+ 
+#search, #carrito img {
+    height: 30px; /* Tamaño original de los íconos */
+    width: auto;
+    cursor: pointer;
+    transition: transform 0.2s ease, opacity 0.2s ease;
+}
+ 
+#search {
+    margin-left: auto; /* Para alinear con el resto de los elementos */
+    margin-right: 15px;
+}
+ 
+#search:hover, #carrito img:hover {
+    transform: scale(1.1);
+    opacity: 0.8;
+}
+ 
+#carrito {
+    margin-right: 0;
+}
+ 
+ 
+/* Main Hero Section Styles for index.html (#texto-empresa) - NUEVO DISEÑO DE CONTENIDO */
+#texto-empresa {
+    color: var(--color-white);
+    font-size: 1.2em;
+    min-height: 650px; /* Un poco más alto para mayor impacto visual */
+    margin-bottom: 80px;
+    background-image: url(../images/playa-fondo.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    padding-left: 12%;
+    position: relative;
+    overflow: hidden;
+}
+ 
+/* Overlay para la imagen de fondo en #texto-empresa */
+#texto-empresa::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.65); /* Overlay ligeramente más oscuro */
+    z-index: 1;
+}
+ 
+#texto-empresa > * {
+    position: relative;
+    z-index: 2;
+}
+ 
+/* Animaciones de entrada para el título y el slogan */
+@keyframes slideInFromLeft {
+    0% {
+        opacity: 0;
+        transform: translateX(-100px); /* Empieza 100px a la izquierda */
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+ 
+@keyframes slideInFromRight {
+    0% {
+        opacity: 0;
+        transform: translateX(100px); /* Empieza 100px a la derecha */
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+ 
+.hero-title {
+    font-size: 5.5em;
+    color: var(--color-white);
+    margin-bottom: 20px;
+    text-align: left;
+    text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.9);
+    font-family: 'Poppins', sans-serif;
+    font-weight: 900;
+    line-height: 1.1;
+    /* Aplicar la animación al título */
+    animation: slideInFromLeft 1.2s ease-out forwards; /* Duración, tipo, y mantener estado final */
+    animation-delay: 0.5s; /* Pequeño retraso para que no aparezca inmediatamente al cargar */
+    opacity: 0; /* Asegura que esté oculto antes de la animación */
+}
+ 
+.hero-slogan {
+    font-size: 1.8em;
+    width: 90%;
+    text-align: left;
+    margin-top: 0;
+    color: #f0f0f0;
+    font-weight: 300;
+    font-family: 'Roboto Slab', serif;
+    line-height: 1.4;
+    /* Aplicar la animación al slogan */
+    animation: slideInFromRight 1.2s ease-out forwards; /* Misma duración, pero desde la derecha */
+    animation-delay: 0.8s; /* Un poco más de retraso que el título */
+    opacity: 0; /* Asegura que esté oculto antes de la animación */
+}
+ 
+#texto-empresa img {
+    width: 13%; /* IMAGEN MÁS CHICA! Reducido de 18% a 13% */
+    border-radius: 20px;
+    position: absolute;
+    top: 50%;
+    right: 8%;
+    transform: translateY(-50%) rotate(3deg);
+    box-shadow: 8px 8px 20px rgba(0, 0, 0, 0.3);
+    transition: transform 0.5s ease;
+}
+ 
+#texto-empresa img:hover {
+    transform: translateY(-50%) rotate(0deg) scale(1.03);
+}
+ 
+/* General Information Section (#informacion-general) */
+#informacion-general-container {
+    padding: 50px 20px;
+    background-color: var(--color-soft-gray); /* Fondo consistente con la nueva paleta */
+}
+ 
+#informacion-general {
+    background-color: var(--color-white);
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    width: 70%;
+    margin: 0 auto;
+    text-align: center;
+}
+ 
+#informacion-general h2 {
+    font-size: 2.8em;
+    color: var(--color-deep-blue);
+    margin-bottom: 20px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 700;
+}
+ 
+#informacion-general p {
+    font-size: 1.15em;
+    line-height: 1.8;
+    color: var(--color-dark-gray);
+    width: 85%;
+    font-family: 'Inter', sans-serif;
+}
+ 
+/* Our History Section (#historia-inicio) */
+#historia-inicio {
+    background-color: var(--color-light-gray); /* Tono muy claro para sección de historia */
+    width: 85%;
+    margin: 60px auto;
+    padding: 40px;
+    border-radius: 20px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+ 
+#historia-inicio img {
+    width: 45%;
+    border-radius: 18px;
+    box-shadow: 4px 4px 15px rgba(0, 0, 0, 0.2);
+}
+ 
+#historia-inicio-texto {
+    width: 55%;
+}
+ 
+#historia-inicio-texto h2 {
+    font-size: 2.2em;
+    color: var(--color-deep-blue);
+    text-align: left;
+    margin-bottom: 15px;
+    width: 100%;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 700;
+}
+ 
+#historia-inicio-texto p {
+    font-size: 1.05em;
+    text-align: left;
+    margin-bottom: 25px;
+    width: 100%;
+    line-height: 1.7;
+    color: var(--color-dark-gray);
+    font-family: 'Inter', sans-serif;
+}
+ 
+#historia-inicio-texto a {
+    display: inline-block;
+    color: var(--color-white);
+    font-family: 'Poppins', sans-serif; /* Poppins para el texto del botón */
+    font-weight: 700; /* Negrita para el botón */
+    background-color: var(--color-teal-green); /* Botón con color de acento */
+    border: solid 2px var(--color-teal-green-hover); /* Borde del botón más oscuro */
+    border-radius: 8px;
+    padding: 12px 25px;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    transition: background-color 0.3s ease, border-color 0.3s ease, transform 0.2s ease;
+}
+ 
+#historia-inicio-texto a:hover {
+    background-color: var(--color-teal-green-hover);
+    border-color: var(--color-teal-green);
+    transform: translateY(-3px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+ 
+/* Aliprocic Page Specific Styles (#aliprocic-hero and #proceso-fabricacion) */
+#aliprocic-hero {
+    background-image: url(../images/aliprocic-bg.jpg);
+    background-size: cover;
+    background-position: center;
+    color: var(--color-white);
+    padding: 80px 20px;
+    text-align: center;
+    min-height: 450px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+}
+ 
+#aliprocic-hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.7); /* Overlay más oscuro para mejor contraste del texto */
+    z-index: 1;
+}
+ 
+#aliprocic-hero > * {
+    position: relative;
+    z-index: 2;
+}
+ 
+#aliprocic-hero h1 {
+    font-size: 3.5em;
+    color: var(--color-white);
+    margin-bottom: 10px;
+    text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.7);
+    width: 80%;
+    font-family: 'Poppins', sans-serif; /* Consistencia en títulos */
+    font-weight: 700;
+}
+ 
+#aliprocic-hero p {
+    font-size: 1.3em;
+    width: 60%;
+    margin-bottom: 25px;
+    color: #e0e0e0; /* Un gris muy claro para el texto en fondos oscuros */
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+    font-family: 'Inter', sans-serif; /* Consistencia en párrafos */
+}
+ 
+#aliprocic-hero img {
+    width: 200px;
+    height: auto;
+    border-radius: 15px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+    margin-top: 20px;
+    transition: transform 0.3s ease;
+}
+ 
+#aliprocic-hero img:hover {
+    transform: scale(1.05);
+}
+ 
+#proceso-fabricacion {
+    padding: 60px 20px;
+    text-align: center;
+    background-color: var(--color-soft-gray); /* Fondo consistente */
+}
+ 
+#proceso-fabricacion h2 {
+    font-size: 2.8em;
+    margin-bottom: 20px;
+    color: var(--color-deep-blue);
+    font-family: 'Poppins', sans-serif;
+    font-weight: 700;
+}
+ 
+.intro-proceso {
+    width: 70%;
+    margin-bottom: 40px;
+    font-size: 1.1em;
+    color: var(--color-dark-gray);
+    font-family: 'Inter', sans-serif;
+}
+ 
+/* Carousel Specific Styles */
+.carousel-container {
+    max-width: 900px;
+    margin: 20px auto 60px auto;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+    border-radius: 15px;
+    overflow: hidden;
+}
+ 
+.carousel-item img {
+    max-height: 500px;
+    object-fit: cover;
+    object-position: center;
+    width: 100%;
+}
+ 
+.carousel-caption {
+    background-color: rgba(26, 32, 44, 0.85); /* Fondo de caption con color de la paleta (deep blue), más opaco */
+    padding: 20px;
+    border-radius: 0 0 15px 15px;
+    color: var(--color-white);
+    text-align: left;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    position: absolute;
+}
+ 
+.carousel-caption h5 {
+    color: var(--color-white);
+    font-size: 1.5em;
+    margin-bottom: 8px;
+    font-weight: 700;
+    font-family: 'Poppins', sans-serif;
+}
+ 
+.carousel-caption p {
+    color: #f0f0f0;
+    font-size: 1em;
+    margin: 0;
+    text-align: left;
+    width: 100%;
+    line-height: 1.5;
+    font-family: 'Inter', sans-serif;
+}
+ 
+/* Override default Bootstrap carousel controls color */
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+    filter: invert(1);
+    font-size: 2.5rem;
+}
+ 
+.carousel-control-prev, .carousel-control-next {
+    width: 5%;
+}
+ 
+/* Footer Styles */
+footer {
+    background-color: var(--color-deep-blue); /* Fondo del footer con el color principal oscuro */
+    color: var(--color-soft-gray); /* Texto del footer claro */
+    text-align: center;
+    padding: 25px;
+    font-size: 0.9em;
+    border-top: 5px solid var(--color-teal-green); /* Línea del footer con color de acento */
+}
+ 
+#footer-links {
+    margin-top: 15px;
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+ 
+#footer-links a {
+    color: var(--color-soft-gray); /* Color de enlaces en el footer */
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+ 
+#footer-links a:hover {
+    color: var(--color-teal-green); /* Color de acento al pasar el ratón */
+}
+ 
+#footer-links span {
+    color: #777;
+}
+ 
+/* Existing general sections - Asegurar que utilicen la nueva paleta y fuentes */
+ 
+#nosotros {
+    padding: 50px 20px;
+    background-color: var(--color-soft-gray); /* Fondo consistente */
+}
+#nosotros p {
+    text-align: justify;
+    width: 75%;
+    margin: 20px auto;
+    color: var(--color-dark-gray);
+    font-family: 'Inter', sans-serif;
+}
+ 
+#historia {
+    width: 90%;
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 30px;
+    border-radius: 10px;
+    background-color: var(--color-white); /* Fondo de sección */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    overflow: auto;
+}
+ 
+#historia img {
+    width: 300px;
+    border-radius: 15px;
+    float: left;
+    margin-right: 20px;
+    box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.1);
+}
+ 
+#historia-texto {
+    color: var(--color-dark-gray);
+    font-size: 1em;
+    line-height: 1.7;
+    padding: 20px;
+    font-family: 'Inter', sans-serif;
+}
+ 
+#historia-texto h2 {
+    font-size: 2em;
+    color: var(--color-deep-blue);
+    margin-bottom: 15px;
+    text-align: left;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 700;
+}
+ 
+#historia-texto > p {
+    font-size: 1.2em;
+    width: 100%;
+    text-align: left;
+    margin-bottom: 20px;
+}
+ 
+#valores, #filosofia {
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    background-color: var(--color-white); /* Fondo consistente */
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+ 
+#valores h3, #filosofia h3 {
+    font-size: 1.5em;
+    color: var(--color-deep-blue);
+    margin-bottom: 10px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 700;
+}
+ 
+#valores > p {
+    height: auto;
+    text-align: justify;
+    width: 95%;
+    margin: 10px auto;
+    color: var(--color-dark-gray);
+    font-family: 'Inter', sans-serif;
+}
+ 
+#filosofia > p {
+    font-size: 1.1em;
+    text-align: justify;
+    width: 95%;
+    margin: 10px auto;
+    color: var(--color-dark-gray);
+    font-family: 'Inter', sans-serif;
+}
+ 
+#filosofia-1, #filosofia-2 {
+    width: 48%;
+    margin-bottom: 15px;
+    float: left;
+}
+ 
+#filosofia-1 {
+    margin-right: 4%;
+}
+ 
+#organigrama > img {
+    width: 90%;
+    display: block;
+    margin: 20px auto;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+ 
+/* Estilos de la página de sustentabilidad */
+ 
+#sustentabilidad {
+    padding: 30px 20px;
+    overflow: auto;
+    background-color: var(--color-soft-gray); /* Fondo consistente */
+}
+ 
+#sustentabilidad h1,
+#sustentabilidad h2 {
+    width: 90%;
+    margin: 30px auto;
+    color: var(--color-deep-blue);
+    font-family: 'Poppins', sans-serif;
+    font-weight: 700;
+}
+ 
+#sustentabilidad p {
+    text-align: justify;
+    width: 90%;
+    margin: 20px auto;
+    line-height: 1.7;
+    color: var(--color-dark-gray);
+    font-family: 'Inter', sans-serif;
+}
+ 
+#sustentabilidad p > img {
+    width: 30%;
+    border-radius: 10px;
+    margin-left: 20px;
+    float: right;
+    box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.1);
+}
+ 
+#sustentabilidad ul {
+    list-style-type: square;
+    padding-left: 30px;
+    width: 90%;
+    margin: 20px auto;
+}
+ 
+#sustentabilidad li {
+    font-size: 1em;
+    font-weight: bold;
+    color: var(--color-deep-blue);
+    margin-bottom: 10px;
+    font-family: 'Inter', sans-serif;
+}
+ 
+#sustentabilidad ul > p {
+    font-size: 0.9em;
+    font-weight: normal;
+    text-align: justify;
+    width: 100%;
+    margin-top: 5px;
+    color: var(--color-dark-gray);
+    font-family: 'Inter', sans-serif;
+}
+ 
+#impacto-corto,
+#impacto-mediano,
+#impacto-largo {
+    width: 100%;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    background-color: var(--color-white); /* Fondo consistente */
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+ 
+@media (min-width: 768px) {
+    #impacto-corto,
+    #impacto-mediano,
+    #impacto-largo {
+        width: 30%;
+        float: left;
+        margin-right: 3%;
+    }
+ 
+    #impacto-largo {
+        margin-right: 0;
+    }
+}
+ 
+video {
+    width: 90%;
+    max-width: 800px;
+    margin: 30px auto;
+    display: block;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+}
+ 
+/* Animaciones de Deslizamiento (Slide-in) */
+.slide-in-element {
+    opacity: 0; /* Inicialmente transparente */
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out; /* Transición suave */
+    will-change: opacity, transform; /* Sugiere al navegador optimizar estas propiedades */
+}
+ 
+/* Estado inicial de transformación basado en la dirección del data-attribute */
+.slide-in-element[data-animation-direction="left"] {
+    transform: translateX(-100px); /* Para elementos que vienen de la izquierda */
+}
+ 
+.slide-in-element[data-animation-direction="right"] {
+    transform: translateX(100px); /* Para elementos que vienen de la derecha */
+}
+ 
+.slide-in-element[data-animation-direction="up"] {
+    transform: translateY(50px); /* Para elementos que vienen de abajo (como las secciones) */
+}
+ 
+/* Cuando se añade la clase 'is-visible' por JS */
+.slide-in-element.is-visible {
+    opacity: 1; /* Completamente visible */
+    transform: translate(0, 0); /* Vuelve a su posición original */
+}
+ 
+.slide-in-element {
+    opacity: 0; /* Inicialmente transparente */
+    transform: translateY(50px); /* Inicialmente movido 50px hacia abajo */
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out; /* Transición suave para ambos */
+    will-change: opacity, transform; /* Sugiere al navegador optimizar estas propiedades */
+}
+ 
+.slide-in-element.is-visible {
+    opacity: 1; /* Completamente visible */
+    transform: translateY(0); /* Vuelve a su posición original */
+}
+ 
+/* --- NUEVOS ESTILOS PARA NOSOTROS.HTML --- */
+ 
+/* Hero Section para Nosotros */
+#nosotros-hero-section {
+    background-color: var(--color-deep-blue);
+    color: var(--color-white);
+    padding: 80px 20px;
+    text-align: center;
+    min-height: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+    margin-bottom: 60px;
+}
+ 
+#nosotros-hero-section h1 {
+    font-size: 4em;
+    color: var(--color-white);
+    margin-bottom: 15px;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
+    font-weight: 900;
+    width: 80%;
+    text-align: center;
+}
+ 
+#nosotros-hero-section p {
+    font-size: 1.5em;
+    width: 70%;
+    margin-top: 0;
+    color: #e0e0e0;
+    font-weight: 300;
+    line-height: 1.4;
+    text-align: center;
+}
+ 
+/* Sección de Historia (Makeover) */
+
+.historia-background {
+    background-image: url('../images/dept-quimicos.jpeg');
+    background-size: cover;
+    background-position: center;
+    padding: 80px 20px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 400px;
+}
+
+.historia-overlay h2,
+.historia-overlay p {
+    color: #ffffff; /* texto blanco */
+}
+
+.historia-overlay {
+    background-color: rgba(0, 0, 0, 0.65); /* fondo negro transparente */
+    color: #ffffff; /* texto blanco */
+    padding: 40px 60px; /* más espacio horizontal */
+    width: 95%; /* casi todo el ancho disponible */
+    max-width: 1000px; /* más ancho máximo */
+    border-radius: 12px;
+    box-sizing: border-box;
+    text-align: justify;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.4);
+    font-family: 'Roboto Slab', serif; /* fuente serif elegante para historia */
+    font-size: 1.15rem; /* un poco más grande */
+    line-height: 1.7;
+}
+
+.historia-texto {
+    color: #ffffff;
+    max-width: 800px;
+    text-align: center;
+    font-family: 'Roboto Slab', serif;
+    animation: fadeIn 1s ease forwards;
+}
+
+.historia-texto h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    font-family: 'Poppins', sans-serif;
+}
+
+.historia-texto p {
+    font-size: 1rem;
+    line-height: 1.6;
+}
+
+
+/* Misión y Visión (Dos Columnas) */
+#mv-container {
+    display: flex;
+    flex-direction: column; /* Apilado en móviles */
+    gap: 30px;
+    width: 85%;
+    max-width: 1100px;
+    margin: 60px auto;
+}
+ 
+.mv-card {
+    background-color: var(--color-white);
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    flex: 1; /* Ocupa el espacio disponible en columnas */
+}
+ 
+.mv-card h2 {
+    font-size: 2.5em;
+    color: var(--color-teal-green); /* Color de acento para títulos de MV */
+    margin-bottom: 15px;
+    text-align: center;
+    width: 100%;
+}
+ 
+.mv-card p {
+    font-size: 1.1em;
+    line-height: 1.7;
+    color: var(--color-dark-gray);
+    width: 90%;
+    margin: 0 auto;
+    text-align: justify;
+}
+ 
+/* Valores (Franja con Imágenes Redondeadas) */
+#valores-section {
+    text-align: center;
+    padding: 60px 20px;
+    background-color: var(--color-soft-gray); /* Un fondo diferente para destacarlo */
+    margin-top: 60px; /* Espacio superior */
+}
+ 
+#valores-section h2 {
+    font-size: 3em;
+    color: var(--color-deep-blue);
+    margin-bottom: 40px;
+}
+ 
+.valores-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); /* Adaptativo a 5 columnas */
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+    align-items: start; /* Alinea los items en la parte superior */
+}
+ 
+.valor-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start; /* Alinea contenido en la parte superior */
+    padding: 20px;
+    background-color: var(--color-white);
+    border-radius: 15px; /* Bordes ligeramente redondeados para el contenedor */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    height: 100%; /* Para que todos tengan la misma altura */
+}
+ 
+.valor-item:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+}
+ 
+.valor-item img {
+    width: 120px; /* Tamaño fijo para las imágenes de valor */
+    height: 120px;
+    border-radius: 50%; /* Imágenes redondeadas */
+    object-fit: cover;
+    border: 5px solid var(--color-teal-green); /* Borde de color de acento */
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 15px;
+    transition: transform 0.3s ease;
+}
+ 
+.valor-item:hover img {
+    transform: scale(1.05);
+}
+ 
+.valor-item p {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: var(--color-deep-blue);
+    margin: 0;
+    text-align: center;
+    width: 100%; /* Asegura que el texto ocupe el ancho */
+}
+ 
+#filosofia-section {
+    width: 85%;
+    max-width: 1100px;
+    margin: 60px auto;
+    padding: 40px;
+    background-color: var(--color-white);
+    border-radius: 15px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+#filosofia-section::before { /* Detalle de fondo */
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100px;
+    height: 100px;
+    background-color: rgba(56, 161, 105, 0.1); /* Verde suave */
+    border-radius: 0 0 100% 0;
+    z-index: 0;
+}
+
+#filosofia-section::after { /* Otro detalle de fondo */
+    content: '';
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 150px;
+    height: 150px;
+    background-color: rgba(26, 32, 44, 0.05); /* Azul muy suave */
+    border-radius: 100% 0 0 0;
+    z-index: 0;
+}
+
+#filosofia-section h2 {
+    font-size: 2.8em;
+    color: var(--color-deep-blue);
+    margin-bottom: 40px;
+    text-align: center;
+    position: relative;
+    z-index: 1;
+}
+
+.filosofia-content {
+    position: relative;
+    z-index: 1;
+    /* Elimina display: flex aquí para manejar con float */
+    /* Añade clearfix si el float causa problemas con elementos posteriores */
+}
+
+.filosofia-text-block {
+    background-color: var(--color-soft-gray);
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    margin-bottom: 30px; /* Espacio entre los bloques de filosofía */
+    text-align: left; /* Alinea el texto a la izquierda dentro del bloque */
+    overflow: auto; /* Clearfix para floats */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.filosofia-text-block:last-child {
+    margin-bottom: 0; /* Sin margen inferior en el último bloque */
+}
+
+.filosofia-text-block:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.filosofia-float-img { /* IMÁGENES FLOTANTES */
+    width: 250px; /* Tamaño más pequeño para las imágenes flotantes */
+    height: 200px; /* Altura fija para consistencia */
+    object-fit: cover;
+    border-radius: 12px;
+    box-shadow: 4px 4px 15px rgba(0, 0, 0, 0.2);
+    margin: 0 25px 15px 0; /* Espacio a la derecha y abajo */
+    float: left; /* Imagen a la izquierda, texto fluye alrededor */
+    transition: transform 0.5s ease;
+}
+
+.filosofia-float-img:hover {
+    transform: scale(1.03);
+}
+
+.filosofia-text-block p {
+    font-size: 1.1em;
+    line-height: 1.8;
+    color: var(--color-dark-gray);
+    text-align: justify;
+    /* margin-left: 280px; */ /* Si la imagen es 250px + margin 25px, esto empuja el texto */
+    /* Pero es mejor dejar que el float haga su trabajo */
+}
+
+.filosofia-middle-img { /* IMAGEN DEL MEDIO (filosofia3.gif) */
+     display: block; /* Para centrar con margin auto */
+    width: 100%;
+    max-width: 300px; /* ANCHO MÁS PEQUEÑO */
+    height: 200px; /* ALTO MÁS PEQUEÑO */
+    margin: 40px auto; /* Espacio arriba/abajo y centrar */
+    border-radius: 20px;
+    border: 5px solid var(--color-teal-green); /* Borde llamativo */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+    object-fit: contain; /* Para que el gif se vea completo */
+    transition: transform 0.5s ease, box-shadow 0.5s ease;
+}
+
+.filosofia-middle-img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.4);
+}
+ 
+/* Organigrama General */
+#organigrama-section,
+#organigrama-ti-section {
+    width: 85%;
+    max-width: 1000px;
+    margin: 60px auto;
+    padding: 40px;
+    background-color: var(--color-white);
+    border-radius: 15px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+    text-align: center;
+}
+ 
+#organigrama-section h2,
+#organigrama-ti-section h2 {
+    font-size: 2.8em;
+    color: var(--color-deep-blue);
+    margin-bottom: 30px;
+}
+ 
+#organigrama-section img,
+#organigrama-ti-section img {
+    width: 100%;
+    height: auto;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    max-width: 800px; /* Limita el ancho de la imagen */
+}
+ 
+/* MEDIAS QUERIES para tablet y desktop */
+@media (min-width: 768px) {
+    #historia-section {
+        flex-direction: row; /* En línea en pantallas grandes */
+        text-align: left;
+    }
+ 
+    #historia-section img {
+        width: 45%;
+        max-width: none; /* Eliminar límite de ancho */
+        height: auto; /* Altura auto para mantener proporción */
+    }
+ 
+    .historia-text {
+        text-align: left;
+    }
+ 
+    .historia-text h2 {
+        text-align: left;
+    }
+ 
+    #mv-container {
+        flex-direction: row; /* En línea en pantallas grandes */
+    }
+ 
+    .mv-card p {
+        width: 100%; /* Ajustar al ancho completo de la columna */
+    }
+ 
+    .filosofia-content {
+        flex-direction: row; /* En línea en pantallas grandes */
+    }
+ 
+    .filosofia-text-block {
+        flex-direction: column; /* Columnas de texto con imagen arriba */
+        text-align: left;
+        align-items: flex-start; /* Alinea imagen y texto a la izquierda */
+        flex: 1; /* Distribuye el espacio equitativamente */
+    }
+ 
+    .filosofia-text-block:nth-child(even) { /* Si quieres alinear la segunda imagen a la derecha */
+        align-items: flex-end;
+        text-align: right;
+    }
+ 
+    .filosofia-text-block img {
+        margin-bottom: 15px; /* Espacio debajo de la imagen */
+    }
+ 
+    .filosofia-text-block p {
+        width: 100%; /* Asegura que el texto ocupe el ancho completo de su bloque */
+    }
+}
+
+body {
+    background-color: #f0ede6; /* Un beige un poco más notorio */
+    /* Otros estilos del body que ya tengas */
+}
