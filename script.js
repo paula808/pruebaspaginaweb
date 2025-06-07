@@ -9,19 +9,38 @@ document.addEventListener('DOMContentLoaded', () => {
             const elementBottom = element.getBoundingClientRect().bottom;
             const viewportHeight = window.innerHeight;
 
-            // Define cuándo el elemento debe empezar a aparecer (ajusta el 0.8 según necesites)
-            // Cuando la parte superior del elemento entra en el 80% inferior del viewport
-            const shouldBeVisible = elementTop < viewportHeight * 0.95 && elementBottom > viewportHeight * 0.05;
+            // Ajusta este umbral si quieres que los elementos aparezcan antes o después
+            const shouldBeVisible = elementTop < viewportHeight * 0.95 && elementBottom > 0; // Se anima si cualquier parte está en el viewport
 
             if (shouldBeVisible) {
-                element.classList.add('is-visible');
+                // Añade la clase 'is-visible' con un pequeño retraso para escalonar si es necesario
+                const delay = parseFloat(element.dataset.animationDelay || 0); // Obtener el retraso del data-attribute
+                setTimeout(() => {
+                    element.classList.add('is-visible');
+                }, delay * 1000); // Convertir segundos a milisegundos
+
             } else {
-                // Opcional: Si quieres que la animación se revierta al salir de vista
-                // Comenta la siguiente línea si solo quieres que aparezcan una vez
+                // Si el elemento sale de la vista, se quita la clase para que la animación se repita
                 element.classList.remove('is-visible');
             }
         });
     };
+
+    // Aplicar los estilos iniciales (opacidad y transform) antes de la primera comprobación
+    // ESTA SECCIÓN ES LA QUE FALTA EN TU CÓDIGO ACTUAL Y ES CRUCIAL
+    slideInElements.forEach(element => {
+        // Asegúrate de que los elementos estén ocultos al cargar
+        element.style.opacity = '0';
+        const direction = element.dataset.animationDirection;
+        if (direction === 'left') {
+            element.style.transform = 'translateX(-100px)';
+        } else if (direction === 'right') {
+            element.style.transform = 'translateX(100px)';
+        } else if (direction === 'up') { // Para las secciones que vienen de abajo
+            element.style.transform = 'translateY(50px)';
+        }
+    });
+
 
     // Ejecutar al cargar la página y al hacer scroll
     window.addEventListener('scroll', checkVisibility);
